@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 function GalleryImage({ imageUrl, title, description }) {
   return (
@@ -10,5 +10,11 @@ function GalleryImage({ imageUrl, title, description }) {
     </article>
   );
 }
+
+GalleryImage.propTypes = {
+  imageUrl: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+};
 
 export default GalleryImage;

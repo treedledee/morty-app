@@ -1,0 +1,24 @@
+.app {
+  text-align: center;
+
+  &-header {
+    background-color: #222;
+    height: 50px;
+    padding: 20px;
+    color: white;
+  }
+
+  &-title {
+    font-size: 1.5em;
+  }
+
+  &-intro {
+    font-size: large;
+  }
+
+  &-image {
+    height: 300px;
+    width: auto;
+    padding-bottom: 20px;
+  }
+}

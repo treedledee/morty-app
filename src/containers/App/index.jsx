@@ -1,47 +1,55 @@
 import React, { Component } from 'react';
+import { IMAGES_API } from '../../constants';
 
 class App extends Component {
   constructor() {
     super();
-    this.state = { items: [] };
+    this.state = {
+      error: null,
+      isLoaded: false,
+      items: [],
+    };
   }
 
   componentDidMount() {
-    const options = {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: 'Client-ID c7fd9e46b4c809c',
-      },
-    };
-    fetch('https://api.imgur.com/3/gallery/r/aww/hot/day/1', options)
+    fetch(IMAGES_API.IMAGES_URL, IMAGES_API.IMAGES_OPTIONS)
       .then(response => response.json())
-      .then((json) => {
-        console.log('request succeeded with JSON response', json);
-        this.setState({ items: json.data });
-      })
-      .catch((error) => {
-        console.log('request failed', error);
-      });
+      .then(
+        (result) => {
+          this.setState({
+            isLoaded: true,
+            items: result.data,
+          });
+        },
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error,
+          });
+        },
+      );
   }
 
   render() {
+    const { error, isLoaded, items } = this.state;
+    if (error) {
+      return <div>Error: {error.message}</div>;
+    } else if (!isLoaded) {
+      return <div>Loading...</div>;
+    }
     return (
       <div className="app">
         <header className="app-header">
           <h1 className="app-title">Theresa&apos;s boilerplate</h1>
         </header>
-        <p className="app-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <div>
-          <div>Items:</div>
-          { this.state.items.map(item =>
-            (<div>
+        <ul>
+          { items.map(item => (
+            <div key={item.id}>
               <div>{item.title}</div>
-              <img className="app-image" alt={item.id} src={item.link} />)
-             </div>))}
-        </div>
+              <img className="app-image" alt={item.id} src={item.link} />
+            </div>))
+          }
+        </ul>
       </div>
     );
   }

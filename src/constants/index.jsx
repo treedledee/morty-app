@@ -1,25 +1,4 @@
-export const API_ROOT = Object.freeze({
-  ROOT: 'api.imgur.com',
-});
 
-export const API_PATHS = Object.freeze({
-  SUBREDDIT_GALLERY: '/3/gallery/r/aww/top/day/1',
-});
-
-export const CLIENT_ID = Object.freeze({
-  ID: 'c7fd9e46b4c809c',
-});
-
-export const IMAGES_API = Object.freeze({
-  IMAGES_OPTIONS: {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: 'Client-ID c7fd9e46b4c809c',
-    },
-  },
-  IMAGES_URL: 'https://api.imgur.com/3/gallery/r/aww/hot/day/1',
-});
 
 export const HTTP = Object.freeze({
   STATUS: {

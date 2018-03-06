@@ -40,7 +40,7 @@ class App extends Component {
     return (
       <div className="app">
         <header className="app-header">
-          <h1 className="app-title">Theresa&apos;s boilerplate</h1>
+          <h1 className="app-title">boilerplate</h1>
         </header>
         <ul>
           { items.map(item => (

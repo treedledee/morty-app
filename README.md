@@ -11,10 +11,10 @@ Steps to run the app:
 The boilerplate is from `create-react-app`. With a tweak to use SCSS instead
 of what was baked in.
 
+Most of the code is in `src/containers/App.jsx` and `src/components/Table.jsx`.
 I put the sorting functions in the main App file because I wanted to keep
 the Table component stateless. I feel kind of mixed about this, because
-I don't really think the App container needs to know about the sorting functions
-at all.
+I don't think the App container needs to know about the sorting functions.
 
 Wanting to keep the table stateless also prevented me from tracking the
 descending/ascending sorting in state, which is why there are two separate

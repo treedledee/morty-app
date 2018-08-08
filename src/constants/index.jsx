@@ -1,4 +1,13 @@
-
+export const IMAGES_API = Object.freeze({
+  IMAGES_OPTIONS: {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: 'Client-ID c7fd9e46b4c809c',
+    },
+  },
+  IMAGES_URL: 'https://api.imgur.com/3/gallery/r/aww/hot/day/1',
+});
 
 export const HTTP = Object.freeze({
   STATUS: {
@@ -26,4 +35,10 @@ export const HTTP = Object.freeze({
   },
   CREDENTIALS: 'credentials',
   SAME_ORIGIN: 'same-origin',
+});
+
+export const LOAN_TYPES = Object.freeze({
+  FNMA15YRFXCF: '15 year fixed rate',
+  FNMA30YRFXCF: '30 year fixed rate',
+  FNMA71ARMCF: '7/1 ARM',
 });

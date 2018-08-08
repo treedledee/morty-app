@@ -1,0 +1,20 @@
+.table {
+  width: 80%;
+  margin: 20px auto;
+  text-align: left;
+
+  th {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    background-color: #f0f8ff;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  &__status {
+    height: 12px;
+    margin-top: 12px;
+  }
+}

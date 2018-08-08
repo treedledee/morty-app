@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Table from '../../components/Table';
+import { HTTP } from '../../constants';
 
 class App extends Component {
   constructor() {
@@ -32,9 +33,9 @@ class App extends Component {
 
   fetchLoanOptions(loanAmount) {
     const options = {
-      method: 'GET',
+      method: HTTP.REQUEST_METHOD.GET,
       headers: {
-        'Content-Type': 'application/json',
+        [HTTP.HEADER_FIELD.CONTENT_TYPE]: HTTP.HEADER_FIELD.MIME_TYPE,
       },
     };
     fetch(`http://morty.mockable.io/quotes?loan_amount=${loanAmount}`, options)

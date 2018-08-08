@@ -1,14 +1,3 @@
-export const IMAGES_API = Object.freeze({
-  IMAGES_OPTIONS: {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: 'Client-ID c7fd9e46b4c809c',
-    },
-  },
-  IMAGES_URL: 'https://api.imgur.com/3/gallery/r/aww/hot/day/1',
-});
-
 export const HTTP = Object.freeze({
   STATUS: {
     OK: 200,
